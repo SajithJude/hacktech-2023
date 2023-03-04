@@ -22,9 +22,10 @@ if uploaded_file is not None:
     selected_params = st.multiselect('Select input parameters', df.columns.tolist())
     st.write(selected_params)
     formu = st.text_input(" Input formula ")
-    dat = df[selected_params]
-    model = smf.mixedlm(formula=formu,data=dat).fit()
-    st.write(model.summary())
+    if formu:
+        dat = df[selected_params]
+        model = smf.mixedlm(formula=formu,data=dat).fit()
+        st.write(model.summary())
     # # Select columns to plot
     # st.write('### Select Columns to Plot')
     # columns = list(df.columns)
