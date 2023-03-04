@@ -5,7 +5,7 @@ import os
 
 modelhere = st.session_state['modelols']
 
-st.write(modelhere.summary())
+# st.write(modelhere.summary())
 # dependent_variable = str(modelhere.model.endog_names)
 # independent_variables = str(modelhere.model.exog_names[1:])
 # coefficients = str(modelhere.params)
