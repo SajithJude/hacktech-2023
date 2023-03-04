@@ -17,6 +17,8 @@ prompt = "Generate a mathematical equation if the OLS results are as follows whi
 # st.write(prompt)
 prompt2 = "Generate python code using numpy for the mathematical equation of a data, that gives the following OLS results :"+ " " + str(modelhere.summary()) + " "
 gen = st.button("Generate Equation and explanation")
+gencode = st.button("Generate Code for stimulation")
+
 openai.api_key =  os.getenv("APIKEY")
 
 if gen:
@@ -32,7 +34,7 @@ if gen:
     x = response.choices[0].text.strip()
     st.write(x)
     st.stop()
-else if:
+if gencode:
     st.spinner(text="Generating Code...")
     code = openai.Completion.create(
                                         engine="text-davinci-003",
