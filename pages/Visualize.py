@@ -1,4 +1,7 @@
 import streamlit as st
+import openai
+import os 
+
 
 modelhere = st.session_state['modelols']
 
@@ -10,6 +13,23 @@ r_squared = str(modelhere.rsquared)
 
 prompt = "Generate a mathematical equation for where the OLS results are " + " Dependent variable :" + dependent_variable + " " + " Independent variables: " + " "+ independent_variables  + " " + " Coefficients :" + " " + coefficients + " " + " R-squared :"+ " " + r_squared
 st.write(prompt)
+
+gen = st.button("Generate")
+openai.api_key =  os.getenv("APIKEY")
+
+if gen:
+    response = openai.Completion.create(
+  engine="text-davinci-003",
+  prompt=prompt,
+  max_tokens=50,
+  n=1,
+  stop=None,
+  temperature=0.5,
+)
+x = response.choices[0].text.strip()
+st.write(x)
+st.stop()
+
 
 # import pandas as pd
 # import altair as alt
