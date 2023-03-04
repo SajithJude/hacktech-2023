@@ -30,3 +30,6 @@ if uploaded_file is not None:
         tooltip=columns
     ).interactive()
     st.altair_chart(chart, use_container_width=True)
+
+
+
