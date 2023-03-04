@@ -24,8 +24,14 @@ if uploaded_file is not None:
     formu = st.text_input(" Input formula ")
     if formu:
         dat = df[selected_params]
-        model = smf.ols(formula=formu,data=df).fit()
-        st.write(model.summary())
+        modelols = smf.ols(formula=formu,data=df).fit()
+        st.write(modelols.summary())
+        dependent_variable = str(modelols.model.endog_names)
+        independent_variables = str(modelols.model.exog_names[1:])
+        coefficients = str(modelols.params)
+        r_squared = str(modelols.rsquared)
+        if "modelols" not in st.session_state:
+            st.session_state['modelols'] = modelols
     else:
         st.write("enter the forumla and press enter")
     # # Select columns to plot
