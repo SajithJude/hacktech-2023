@@ -15,7 +15,7 @@ st.write(modelhere.summary())
 
 prompt = "Generate a mathematical equation if the OLS results are as follows while giving clear explanations :" + " " + str(modelhere.summary()) + " "
 # st.write(prompt)
-
+prompt2 "Generate python code using numpy for the mathematical equation of a data, that gives the following OLS results :"+ " " + str(modelhere.summary()) + " "
 gen = st.button("Generate Equation and explanation")
 openai.api_key =  os.getenv("APIKEY")
 
@@ -36,7 +36,7 @@ else:
     st.spinner(text="Generating Code...")
     code = openai.Completion.create(
                                         engine="text-davinci-003",
-                                        prompt=prompt,
+                                        prompt=prompt2,
                                         max_tokens=3600,
                                         n=1,
                                         stop=None,
