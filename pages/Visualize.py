@@ -23,7 +23,7 @@ if gen:
     response = openai.Completion.create(
   engine="text-davinci-003",
   prompt=prompt,
-  max_tokens=50,
+  max_tokens=3600,
   n=1,
   stop=None,
   temperature=0.5,
