@@ -1,7 +1,16 @@
 import streamlit as st
 
 modelhere = st.session_state['modelols']
+
 st.write(modelhere.summary())
+dependent_variable = str(modelhere.model.endog_names)
+independent_variables = str(modelhere.model.exog_names[1:])
+coefficients = str(modelhere.params)
+r_squared = str(modelhere.rsquared)
+
+prompt = "Generate a mathematical equation for where the OLS results are " + " Dependent variable :" + dependent_variable + " " + " Independent variables: " + " "+ independent_variables  + " " + " Coefficients :" + " " + coefficients + " " + " R-squared :"+ " " + r_squared
+st.write(prompt)
+
 # import pandas as pd
 # import altair as alt
 
