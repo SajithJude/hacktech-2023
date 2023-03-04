@@ -1,4 +1,7 @@
-# import streamlit as st
+import streamlit as st
+
+modelhere = st.session_state['modelols']
+st.write(modelhere.summary())
 # import pandas as pd
 # import altair as alt
 
