@@ -6,15 +6,15 @@ import os
 modelhere = st.session_state['modelols']
 
 st.write(modelhere.summary())
-dependent_variable = str(modelhere.model.endog_names)
-independent_variables = str(modelhere.model.exog_names[1:])
-coefficients = str(modelhere.params)
-r_squared = str(modelhere.rsquared)
+# dependent_variable = str(modelhere.model.endog_names)
+# independent_variables = str(modelhere.model.exog_names[1:])
+# coefficients = str(modelhere.params)
+# r_squared = str(modelhere.rsquared)
 
 
 
 prompt = "Generate a mathematical equation if the OLS results are as follows while giving clear explanations :" + " " + str(modelhere.summary()) + " "
-st.write(prompt)
+# st.write(prompt)
 
 gen = st.button("Generate")
 openai.api_key =  os.getenv("APIKEY")
