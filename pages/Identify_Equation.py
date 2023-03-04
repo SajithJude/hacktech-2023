@@ -19,7 +19,7 @@ uploaded_file = st.file_uploader('Upload CSV', type=['csv'])
 if uploaded_file is not None:
     # Read CSV
     df = pd.read_csv(uploaded_file)
-    selected_params = st.multiselect('Select input parameters', df[cols])
+    selected_params = st.multiselect('Select input parameters', df.columns.tolist())
     st.write(selected_params)
     formu = st.text_input(" Input formula ")
     dat = df[selected_params]
