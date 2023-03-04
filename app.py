@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
+
 # Set page title
 st.set_page_config(page_title='CSV Scatter Plot', layout='wide')
 
