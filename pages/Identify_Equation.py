@@ -12,14 +12,14 @@ uploaded_file = st.file_uploader('Upload CSV', type=['csv'])
 #                 're_formula', 'vc_formula', 're_weights', 'cov_struct', 'use_t', 'ddof']
 
 # create dropdown menu for selecting input parameters
-selected_params = st.multiselect('Select input parameters', input_params)
+# selected_params = st.multiselect('Select input parameters', input_params)
 
 
 
 if uploaded_file is not None:
     # Read CSV
     df = pd.read_csv(uploaded_file)
-    selected_params = st.multiselect('Select input parameters', input_params)
+    selected_params = st.multiselect('Select input parameters', df[cols])
     st.write(selected_params)
     formu = st.text_input(" Input formula ")
     dat = df[selected_params]
