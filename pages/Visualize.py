@@ -32,7 +32,7 @@ if gen:
     x = response.choices[0].text.strip()
     st.write(x)
     st.stop()
-elif:
+else if:
     st.spinner(text="Generating Code...")
     code = openai.Completion.create(
                                         engine="text-davinci-003",
