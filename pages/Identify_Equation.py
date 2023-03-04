@@ -24,7 +24,7 @@ if uploaded_file is not None:
     formu = st.text_input(" Input formula ")
     if formu:
         dat = df[selected_params]
-        model = smf.ols(formula=formu,data=dat).fit()
+        model = smf.ols(formula=formu,data=df).fit()
         st.write(model.summary())
     # # Select columns to plot
     # st.write('### Select Columns to Plot')
