@@ -26,6 +26,8 @@ if uploaded_file is not None:
         dat = df[selected_params]
         model = smf.ols(formula=formu,data=df).fit()
         st.write(model.summary())
+    else:
+        st.write("enter the forumla and press enter")
     # # Select columns to plot
     # st.write('### Select Columns to Plot')
     # columns = list(df.columns)
