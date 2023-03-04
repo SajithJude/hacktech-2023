@@ -11,7 +11,7 @@ independent_variables = str(modelhere.model.exog_names[1:])
 coefficients = str(modelhere.params)
 r_squared = str(modelhere.rsquared)
 
-prompt = "Generate a mathematical equation for where the OLS results are " + " Dependent variable :" + dependent_variable + " " + " Independent variables: " + " "+ independent_variables  + " " + " Coefficients :" + " " + coefficients + " " + " R-squared :"+ " " + r_squared
+prompt = "Generate a mathematical equation if the OLS results are as follows while giving clear explanations :" + " " + modelhere
 st.write(prompt)
 
 gen = st.button("Generate")
