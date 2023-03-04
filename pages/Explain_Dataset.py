@@ -6,6 +6,7 @@ uploaded_f = st.file_uploader('Upload CSV', type=['csv'])
 
 if uploaded_f is not None:
 # Display column selection checkboxes
+     df = pd.read_csv(uploaded_file)
     selected_columns = st.multiselect('Select columns', df.columns)
 
     # Create dictionary of selected column descriptions
