@@ -31,8 +31,8 @@ if uploaded_f is not None:
         st.write(f"{col}: {description}")
 
 if st.button("Generate Explanation :"):
-        
-    inpt = "Generate an explanation on which of the following columns to as training parameters for a dataset about " + context + " . " + "Column description :" +  column_descriptions
+
+    inpt = "Generate an explanation on which of the following columns to as training parameters for a dataset about " + context + " . " + "Column description :" +  str(column_descriptions)
     st.write(inpt)
 
     outpt = openai.Completion.create(
