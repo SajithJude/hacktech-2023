@@ -14,7 +14,7 @@ st.write('A tool By the community for the community to make sustainable innovati
 
 # Upload file
 
-with st.expander("Visualization tool for data"):
+with st.expander("Visualization tool"):
             uploaded_file = st.file_uploader('Upload CSV', type=['csv'])
 
             if uploaded_file is not None:
