@@ -7,6 +7,17 @@ import os
 openai.api_key =  os.getenv("APIKEY")
 
 
+with st.expander("How to use"):
+            st.markdown("""
+    
+                #### Upload your dataset in CSV format, 
+                #### Type a one line description about the dataset,
+                #### Select all the columns in the dataset
+                #### Enter a one line description about the Coulumn in each input field and press enter
+                #### Click Generate Explanation to understand the best practice and reasons to select columns
+                #### Click Generate code to Generate a python Machine learning code to train the model with the selected parameters
+                """)
+
 # Read CSV file
 uploaded_f = st.file_uploader('Upload CSV', type=['csv'])
 
