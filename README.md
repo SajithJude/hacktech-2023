@@ -1,7 +1,7 @@
 # hacktech-2023
 
 # Problem
- By analyzing large amounts of data, ML algorithms can identify patterns and optimize the performance of the system, leading to improved efficiency, reduced costs, and increased safety of CCS systems
+
  Machine learning involves the use of algorithms to train models that can make predictions or classifications based on input data. However, the performance of a machine learning model depends on many factors, including the choice of parameters and the preprocessing of the input data.
 
 For beginners and non-programmers, choosing the right parameters for model training and data preprocessing can be challenging. This is because they may not have a deep understanding of how these parameters work, or they may not know which parameters are most important for a given task.
