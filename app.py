@@ -6,7 +6,7 @@ import os
 
 
 # Set page title
-st.set_page_config(page_title='CSV Scatter Plot', layout='wide')
+st.set_page_config(page_title='CodeGen', layout='wide')
 
 # Page title and description
 st.title('CodeGen')
