@@ -61,7 +61,7 @@ if st.button("Generate Code :"):
                                         temperature=0.5,
                                         )
     explan_code= outpt.choices[0].text.strip()
-    st.write(explan_code)
+    st.code(explan_code)
     st.stop()
 
 
