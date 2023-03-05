@@ -47,5 +47,22 @@ if st.button("Generate Explanation :"):
     st.write(explan)
     st.stop()
 
+if st.button("Generate Code :"):
+
+    inpt_code = "Generate training code in python selecting the best parameters from the following columns of a dataset about " + context + " . " + "Column description :" +  str(column_descriptions)
+    st.write(inpt_code)
+
+    outpt = openai.Completion.create(
+                                        engine="text-davinci-003",
+                                        prompt=inpt_code,
+                                        max_tokens=3600,
+                                        n=1,
+                                        stop=None,
+                                        temperature=0.5,
+                                        )
+    explan_code= outpt.choices[0].text.strip()
+    st.write(explan_code)
+    st.stop()
+
 
 
