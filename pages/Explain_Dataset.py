@@ -29,7 +29,9 @@ if uploaded_f is not None:
     # Display selected column names and descriptions
     for col, description in column_descriptions.items():
         st.write(f"{col}: {description}")
-    
+
+if st.button("Generate Explanation :"):
+        
     inpt = "Generate an explanation on which of the following columns to as training parameters for a dataset about " + context + " . " + "Column description :" +  column_descriptions
     st.write(inpt)
 
