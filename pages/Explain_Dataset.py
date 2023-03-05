@@ -37,7 +37,7 @@ if st.button("Generate Explanation :"):
 
     outpt = openai.Completion.create(
                                         engine="text-davinci-003",
-                                        prompt=prompt,
+                                        prompt=inpt,
                                         max_tokens=3600,
                                         n=1,
                                         stop=None,
