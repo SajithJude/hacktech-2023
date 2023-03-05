@@ -1,5 +1,9 @@
 import streamlit as st
 import pandas as pd
+import openai
+
+openai.api_key =  os.getenv("APIKEY")
+
 
 # Read CSV file
 uploaded_f = st.file_uploader('Upload CSV', type=['csv'])
@@ -24,5 +28,20 @@ if uploaded_f is not None:
     for col, description in column_descriptions.items():
         st.write(f"{col}: {description}")
     
+    inpt = "Generate an explanation on which of the following columns to as training parameters for a dataset about " + context + " . " + "Column description :" +  column_descriptions
+    st.write(inpt)
+
+    outpt = openai.Completion.create(
+                                        engine="text-davinci-003",
+                                        prompt=prompt,
+                                        max_tokens=3600,
+                                        n=1,
+                                        stop=None,
+                                        temperature=0.5,
+                                        )
+    explan= outpt.choices[0].text.strip()
+    st.write(explan)
     st.stop()
+
+
 
