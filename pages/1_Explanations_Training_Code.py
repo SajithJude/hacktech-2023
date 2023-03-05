@@ -56,7 +56,7 @@ if uploaded_f is not None:
                                             )
         explan= outpt.choices[0].text.strip()
         st.write(explan)
-        st.stop()
+    st.stop()
 
     if st.button("Generate Code :"):
 
